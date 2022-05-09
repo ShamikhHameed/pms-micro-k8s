@@ -1,0 +1,37 @@
+# Defining the Deployment file
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: topping-service-app
+  labels:
+    app: topping-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app : topping-service-app
+  template:
+    metadata:
+      labels:
+        app: topping-service-app
+    spec:
+      containers:
+      - name: topping-service-app
+        image: shamikhhameed/topping-service:0.0.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 9003
+
+---
+
+# Defining the Service file
+kind: Service
+apiVersion: v1
+metadata:
+  name:  topping-service-svc
+spec:
+  selector:
+    app:  topping-service-app
+  ports:
+  - port: 80
+    targetPort: 9002

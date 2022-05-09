@@ -1,0 +1,37 @@
+# Defining the Deployment file
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-config-server-app
+  labels:
+    app: cloud-config-server-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app : cloud-config-server-app
+  template:
+    metadata:
+      labels:
+        app: cloud-config-server-app
+    spec:
+      containers:
+      - name: cloud-config-server-app
+        image: shamikhhameed/cloud-config-server:0.0.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 9296
+
+---
+
+# Defining the Service file
+kind: Service
+apiVersion: v1
+metadata:
+  name:  cloud-config-server-svc
+spec:
+  selector:
+    app:  cloud-config-server-app
+  ports:
+  - port: 80
+    targetPort: 9296

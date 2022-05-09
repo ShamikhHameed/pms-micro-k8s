@@ -1,0 +1,37 @@
+# Defining the Deployment file
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crust-service-app
+  labels:
+    app: crust-service-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app : crust-service-app
+  template:
+    metadata:
+      labels:
+        app: crust-service-app
+    spec:
+      containers:
+      - name: crust-service-app
+        image: shamikhhameed/crust-service:0.0.1
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 9003
+
+---
+
+# Defining the Service file
+kind: Service
+apiVersion: v1
+metadata:
+  name:  crust-service-svc
+spec:
+  selector:
+    app:  crust-service-app
+  ports:
+  - port: 80
+    targetPort: 9003
