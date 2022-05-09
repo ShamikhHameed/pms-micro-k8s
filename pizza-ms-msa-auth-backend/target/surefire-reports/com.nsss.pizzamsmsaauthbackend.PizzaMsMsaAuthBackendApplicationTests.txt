@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nsss.pizzamsmsaauthbackend.PizzaMsMsaAuthBackendApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.273 s - in com.nsss.pizzamsmsaauthbackend.PizzaMsMsaAuthBackendApplicationTests
