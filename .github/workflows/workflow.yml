@@ -49,7 +49,7 @@ jobs:
       - name: Building and Pushing order-service
         run: mvn package dockerfile:push --file order-service/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing cloud-config-server
