@@ -69,7 +69,7 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-		
+	
   deploy:
   
     needs: build
