@@ -29,25 +29,25 @@ jobs:
           server-password: MAVEN_PASSWORD
           
       - name: Building and Pushing user-service
-        run: mvn package dockerfile:push --file user-service/pom.xml
+        run: mvn package dockerfile:push --file pizza-ms-msa-auth-backend/pom.xml
         env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing crust-service
-        run: mvn package dockerfile:push --file crust-service/pom.xml
+        run: mvn package dockerfile:push --file pizza-ms-msa-crust-backend/pom.xml
         env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing topping-service
-        run: mvn package dockerfile:push --file topping-service/pom.xml
+        run: mvn package dockerfile:push --file pizza-ms-msa-topping-backend/pom.xml
         env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing order-service
-        run: mvn package dockerfile:push --file order-service/pom.xml
+        run: mvn package dockerfile:push --file pizza-ms-msa-order-backend/pom.xml
         env:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
