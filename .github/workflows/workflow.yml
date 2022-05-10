@@ -70,7 +70,7 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 	
-  deploy:
+  Deploy:
   
     needs: build
     runs-on: ubuntu-latest
