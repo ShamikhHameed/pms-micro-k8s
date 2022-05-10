@@ -31,19 +31,19 @@ jobs:
       - name: Building and Pushing user-service
         run: mvn package dockerfile:push --file user-service/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing crust-service
         run: mvn package dockerfile:push --file crust-service/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing topping-service
         run: mvn package dockerfile:push --file topping-service/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing order-service
@@ -55,19 +55,19 @@ jobs:
       - name: Building and Pushing cloud-config-server
         run: mvn package dockerfile:push --file cloud-config-server/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing api-gateway
         run: mvn package dockerfile:push --file api-gateway/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Building and Pushing service-registry
         run: mvn package dockerfile:push --file service-registry/pom.xml
         env:
-          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }
+          MAVEN_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
   Deploy:
