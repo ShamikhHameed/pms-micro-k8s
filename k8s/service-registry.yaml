@@ -56,7 +56,7 @@ spec:
             - containerPort: 8761
           env:
             - name: EUREKA_SERVER_ADDRESS
-            valueFrom:
-              configMapKeyRef:
-                name: eureka-cm
-                key: eureka-service-address
+              valueFrom:
+                configMapKeyRef:
+                  name: eureka-cm
+                  key: eureka-service-address
